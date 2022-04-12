@@ -1,0 +1,59 @@
+* { 
+  -moz-box-sizing: border-box; 
+  -webkit-box-sizing: border-box; 
+   box-sizing: border-box;
+   font-family: 'Times New Roman', Times, serif;
+}
+.card {
+  width: 516px;
+  height: 788px;
+  background-color: white;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 10px;
+  padding-left: 10px
+}
+.innercard {
+  width: 496px;
+  height: 768px;
+  background-color: white;
+  margin: auto;
+  border: 1px solid #d4d4d4;
+  padding-left: 18px;
+  padding-right: 18px;
+  margin-bottom: 20px;
+  padding-top: 2px;
+  font-size: 12pt;
+  box-shadow: 8px 8px #d4d4d4;
+}
+h3 {
+  font-size: 20pt;
+}
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 455px;
+}
+/* Changing Image Width to 300px does not match up with the design. Please advise... */
+.box {
+  border: 1px solid #d4d4d4;
+  margin-top: 15px;
+  margin-bottom: 20px;
+  padding-left: 18px;
+  padding-right: 18px;
+}
+p {
+  font-style: italic;
+  font-size: 12pt;
+}
+span {
+  font-weight: bold;
+}
+li {
+  list-style: none;
+  margin-left: -40px
+}
+br {
+  font-style: italic;
+}
