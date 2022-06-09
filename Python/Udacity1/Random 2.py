@@ -1,13 +1,22 @@
 import turtle
+import random
 
-def super_reptile():
-    t = turtle.Turtle()
-    t.width(5)
-    t.color("pink")
-    return t
+mood = random.choice(["happy", "mad", "sad", "grumpy"])
 
-clark = super_reptile()
-clark.forward(100)
-clark.left(45)
-clark.forward(100)
-# up, up, and away!
+sandy = turtle.Turtle()
+sandy.width(5)
+
+if mood == "happy":
+    sandy.color("yellow")
+elif mood == "mad":
+    sandy.color("red")
+elif mood == ("sad"):
+    sandy.color("blue")
+elif mood == ("grumpy"):
+    sandy.color("green")
+else:
+    sandy.color("grey")
+
+for side in range(5):
+    sandy.forward(100)
+    sandy.right(144)
