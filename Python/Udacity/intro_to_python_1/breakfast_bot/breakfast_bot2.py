@@ -15,7 +15,7 @@ def valid_input(prompt, option1, option2):
             print_pause("Woah sorry, I don't understand.")
 
 def intro():
-    print_pause("Hello! I am Sandy, the Breakfast Bot 2.0 version.")
+    print_pause("Hello! I am Sandy, the Breakfast Bot version 2.0.")
     print_pause("Today we have two breakfast meals available.")
     print_pause("The first is waffles with strawberries and whipped cream.")
     print_pause("The second is sweet potato pancakes with butter and syrup.")
