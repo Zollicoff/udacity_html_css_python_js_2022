@@ -4,7 +4,7 @@ import random
 
 def print_pause(message):
     print(message)
-    time.sleep(1)
+    time.sleep(2)
 
 
 def random_monster():
@@ -74,7 +74,7 @@ def house(monster, inventory):
         fight_query(monster, inventory)
 
 
-def cave(inventory):
+def cave(monster, inventory):
     if "sword" not in inventory:
         print_pause("You peer cautiously into the cave.")
         print_pause("It turns out to be only a very small cave.")
@@ -85,13 +85,13 @@ def cave(inventory):
         inventory.append("sword")
         print_pause("You walk back out to the field.")
         print("")
-        house_or_cave(inventory)
+        house_or_cave(monster, inventory)
     else:
         print_pause("You've been here before, and gotten all the "
                     "good stuff. It's just an empty cave now.")
         print_pause("You walk back out to the field.")
         print_pause("")
-        house_or_cave(inventory, monster)
+        house_or_cave(monster, inventory)
 
 
 def house_or_cave(monster, inventory):
@@ -102,7 +102,7 @@ def house_or_cave(monster, inventory):
     if answer == "1":
         house(monster, inventory)
     elif answer == "2":
-        cave(inventory)
+        cave(monster, inventory)
 
 
 def adventure_game():
