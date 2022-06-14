@@ -91,7 +91,7 @@ def cave(inventory):
                     "good stuff. It's just an empty cave now.")
         print_pause("You walk back out to the field.")
         print_pause("")
-        house_or_cave(inventory)
+        house_or_cave(inventory, monster)
 
 
 def house_or_cave(monster, inventory):
