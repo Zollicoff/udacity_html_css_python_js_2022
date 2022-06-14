@@ -8,7 +8,7 @@ def print_pause(message):
 
 
 def random_monster():
-    list = ["gorgon", "evil fairy", "troll"]
+    list = ["gorgon", "evil fairy", "troll", "dragon"]
     return(random.choice(list))
 
 
@@ -95,7 +95,7 @@ def cave(monster, inventory):
 
 
 def house_or_cave(monster, inventory):
-    print_pause("Enter 1 to knock on the door")
+    print_pause("Enter 1 to knock on the door.")
     print_pause("Enter 2 to peer into the cave.")
     print_pause("What would you like to do?")
     answer = input("(Please enter 1 or 2.) \n")
