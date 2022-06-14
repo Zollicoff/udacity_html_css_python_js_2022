@@ -23,10 +23,10 @@ def play_again():
         exit()
 
 
-def intro():
+def intro(monster):
     print_pause("You find yourself standing in an open field, "
                 "filled with grass and yellow wildflowers.")
-    print_pause("Rumor has it that a " + monster + "is somewhere around "
+    print_pause("Rumor has it that a " + monster + " is somewhere around "
                 "here, and has been terrifying the nearby village.")
     print_pause("In front of you is a house.")
     print_pause("To your right is a dark cave.")
@@ -35,7 +35,7 @@ def intro():
     print("")
 
 
-def fight_query():
+def fight_query(monster, inventory):
     fight = input("Would you like to (1) fight or (2) run away? \n")
     if fight == "1":
         if "sword" not in inventory:
@@ -57,10 +57,10 @@ def fight_query():
         print_pause("You run back into the field. Luckily, you "
                     "don't seem to have been followed.")
         print("")
-        house_or_cave()
+        house_or_cave(monster, inventory)
 
 
-def house():
+def house(monster, inventory):
     print_pause("You approach the door of the house.")
     print_pause("You are about to knock when the door opens "
                 "and out steps a " + monster + ".")
@@ -69,12 +69,12 @@ def house():
     if "sword" not in inventory:
         print_pause("You feel a bit under-prepared for this, "
                     "what with only having a tiny dagger.")
-        fight_query()
+        fight_query(monster, inventory)
     else:
-        fight_query()
+        fight_query(monster, inventory)
 
 
-def cave():
+def cave(inventory):
     if "sword" not in inventory:
         print_pause("You peer cautiously into the cave.")
         print_pause("It turns out to be only a very small cave.")
@@ -85,31 +85,31 @@ def cave():
         inventory.append("sword")
         print_pause("You walk back out to the field.")
         print("")
-        house_or_cave()
+        house_or_cave(inventory)
     else:
         print_pause("You've been here before, and gotten all the "
                     "good stuff. It's just an empty cave now.")
         print_pause("You walk back out to the field.")
         print_pause("")
-        house_or_cave()
+        house_or_cave(inventory)
 
 
-def house_or_cave():
+def house_or_cave(monster, inventory):
     print_pause("Enter 1 to knock on the door")
     print_pause("Enter 2 to peer into the cave.")
     print_pause("What would you like to do?")
     answer = input("(Please enter 1 or 2.) \n")
     if answer == "1":
-        house()
+        house(monster, inventory)
     elif answer == "2":
-        cave()
+        cave(inventory)
 
 
 def adventure_game():
-    inventory = []
     monster = random_monster()
-    intro()
-    house_or_cave()
+    inventory = []
+    intro(monster)
+    house_or_cave(monster, inventory)
 
 
 adventure_game()
