@@ -9,24 +9,20 @@ def print_pause(message):
 
 def random_monster():
     list = ["gorgon", "evil fairy", "troll", "dragon"]
-    return(random.choice(list))
+    return random.choice(list)
 
 
-def valid_input(prompt, option1, option2):
+def valid_input(prompt, options):
     while True:
-        answer = input(prompt).lower()
-        if option1 in answer:
-            break
-        elif option2 in answer:
-            break
-        else:
-            print_pause("Woah sorry, I don't understand.")
-    return answer
+        option = input(prompt).lower()
+        if option in options:
+            return option
+        print_pause(f'Sorry, the option "{option}" is invalid. Try again!')
 
 
 def play_again():
     play_again = valid_input("Would you like to "
-                             "play again? (y/n) \n", "y", "n")
+                             "play again? (y/n) \n", ["y", "n"])
     if play_again == "y":
         print_pause("Excellent! Restarting the game ...")
         adventure_game()
@@ -49,8 +45,8 @@ def intro(monster):
 
 
 def fight_query(monster, inventory):
-    fight = valid_input("Would you like to (1) fight or "
-                        "(2) run away? \n", "1", "2")
+    fight = valid_input("Would you like to (1) "
+                        "fight or (2) run away? \n", ["1", "2"])
     if fight == "1":
         if "sword" not in inventory:
             print_pause("You do your best...")
@@ -112,7 +108,7 @@ def house_or_cave(monster, inventory):
     print_pause("Enter 1 to knock on the door.")
     print_pause("Enter 2 to peer into the cave.")
     print_pause("What would you like to do?")
-    answer = valid_input("(Please enter 1 or 2.) \n", "1", "2")
+    answer = valid_input("(Please enter 1 or 2.) \n", ["1", "2"])
     if answer == "1":
         house(monster, inventory)
     elif answer == "2":

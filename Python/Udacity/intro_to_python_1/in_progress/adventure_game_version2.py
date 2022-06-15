@@ -49,8 +49,8 @@ def intro(monster):
 
 
 def fight_query(monster, inventory):
-    fight = valid_input("Would you like to (1) fight or "
-                        "(2) run away? \n", "1", "2")
+    fight = valid_input("Would you like to (1) "
+                        "fight or (2) run away? \n", "1", "2")
     if fight == "1":
         if "sword" not in inventory:
             print_pause("You do your best...")
