@@ -10,7 +10,7 @@ def make_place_directories(places): # Here's the function definition
         os.mkdir(place)
 
 
-os.chdir("Photos")
+os.chdir("Photos") # Make sure you're already in the correct directory via CLI
 originals = os.listdir()
 places = []
 for filename in originals:
