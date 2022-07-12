@@ -1,7 +1,7 @@
 import os
 
 
-def make_place_directories(places): # Here's the function definition
+def make_place_directories(places):
     for place in places:
         os.mkdir(place)
 
@@ -16,9 +16,8 @@ def organize_photos(directory):
     places = []
     for filename in originals:
         place = extract_place(filename)
-        if place not in places: # This is the key change
+        if place not in places:
             places.append(place)
-
 
     make_place_directories(places)
 
@@ -26,4 +25,6 @@ def organize_photos(directory):
         place = extract_place(filename)
         os.rename(filename, os.path.join(place, filename))
 
-organize_photos("Photos")
+
+if __name__ == '__main__':
+    organize_photos("Photos")
