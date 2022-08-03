@@ -1,6 +1,9 @@
-rude_words = ["crap", "darn", "heck", "jerk", "idiot", "butt", "devil"]
+rude_words = ["crap", "darn", "heck", "jerk", "poop", "butt", "devil"]
 
 import string
+import os
+
+os.chdir(r"C:\Users\zolli\IDrive-Sync\Zach\GitHub\GitHub\Python\Udacity\intro_to_python_2\3_profanity_filter")
 
 def check_line(line):
     rude_count = 0
@@ -24,4 +27,12 @@ def check_file(filename):
         print("At least, no rude words I know.")
 
 if __name__ == '__main__':
+
     check_file("my_story.txt")
+
+
+
+
+# open file
+# write to file loop
+#close file
