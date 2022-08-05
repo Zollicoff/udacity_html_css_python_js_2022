@@ -29,10 +29,3 @@ def check_file(filename):
 if __name__ == '__main__':
 
     check_file("my_story.txt")
-
-
-
-
-# open file
-# write to file loop
-#close file
