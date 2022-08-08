@@ -8,3 +8,4 @@ def server_status(site):
         print("Could not Connect to Server")
 
 server_status("https://google.com")
+
