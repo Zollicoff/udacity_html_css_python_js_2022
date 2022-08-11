@@ -1,10 +1,4 @@
-curl 'https://api.openweathermap.org/data/2.5/weather?lat={20}&lon={20}&appid={05fee7c59918063f69948d83744eee6d}'
-
-curl 'https://api.openweathermap.org/data/2.5/weather?q={LosAngeles}&appid={05fee7c59918063f69948d83744eee6d}'
-
-curl 'https://api.openweathermap.org/data/2.5/1261481&appid={05fee7c59918063f69948d83744eee6d}'
-
-curl 'https://www.metaweather.com/api/1261481/'
+curl 'https://api.openweathermap.org/data/2.5/weather?q={Los%20Angeles}&appid={05fee7c59918063f69948d83744eee6d}'
 
 
 %20 is a space
