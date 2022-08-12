@@ -1,5 +1,3 @@
-import turtles
-
 class BigOrangeTurtle(turtle.Turtle):
     def __init__(self):
         super().__init__()
