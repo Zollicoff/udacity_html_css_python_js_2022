@@ -17,7 +17,7 @@ def valid_input(prompt, options):
         option = input(prompt).lower()
         if option in options:
             return option
-        print_pause(f'Sorry, the option "{option}" is invalid. Try again!')
+        print_pause(f'Sorry, "{option}" is an invalid input. Try again!')
 
 
 # The Player class is the parent class for all of the Players in this game
@@ -26,7 +26,8 @@ class Player:
         return 'rock'
 
     def learn(self, my_move, their_move):
-        pass
+        my_move = [" "]
+        their_move = [" "]
 
 
 # Random Player subclass
@@ -38,7 +39,8 @@ class RandomPlayer(Player):
 # Human player subclass validates user input via valid_input function
 class HumanPlayer(Player):
     def move(self):
-        hp = valid_input("Enter rock, paper, or scissors.\n",['rock', 'paper', 'scissors'])
+        hp = valid_input("Enter rock, paper, or scissors.\n",
+                         ['rock', 'paper', 'scissors'])
         return hp
 
 
@@ -68,6 +70,7 @@ def beats(one, two):
 class Game:
     p1_score = [0]
     p2_score = [0]
+
     def __init__(self, p1, p2):
         self.p1 = p1
         self.p2 = p2
@@ -75,16 +78,17 @@ class Game:
     def play_round(self):
         move1 = self.p1.move()
         move2 = self.p2.move()
-        print(f"Player 1: {move1}  Player 2: {move2}")
+        print_pause(f"Player 1: {move1}  Player 2: {move2}")
         self.p1.learn(move1, move2)
         self.p2.learn(move2, move1)
 
     def play_game(self):
-        print("Welcome to RPS. Game start!")
+        print_pause("Welcome to Rock Paper Scissors!")
+        print_pause("Game Start!")
         for round in range(3):
-            print(f"Round {round + 1}:")
+            print_pause(f"Round {round + 1}:")
             self.play_round()
-        print("Game over!")
+        print_pause("Game over!")
 
 
 # Calls the program, choose which player to use (Player 1, Player 2)
