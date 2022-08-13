@@ -1,17 +1,18 @@
+# Necessary module imports
 import random
 import time
 
+# Global variable for moves
 moves = ['rock', 'paper', 'scissors']
 
 
-memory = []
-
-
+# Repurposed pause function
 def print_pause(message):
     print(message)
     time.sleep(2)
 
 
+# Repurposed input validation function
 def valid_input(prompt, options):
     while True:
         option = input(prompt).lower()
@@ -36,7 +37,7 @@ class RandomPlayer(Player):
         return random.choice(moves)
 
 
-# Human player subclass validates user input via valid_input function
+# Human player subclass with validation
 class HumanPlayer(Player):
     def move(self):
         hp = valid_input("Enter rock, paper, or scissors.\n",
