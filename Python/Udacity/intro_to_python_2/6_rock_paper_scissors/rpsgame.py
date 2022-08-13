@@ -21,13 +21,21 @@ def valid_input(prompt, options):
         print_pause(f'Sorry, "{option}" is an invalid input. Try again!')
 
 
+# Win condition function
+def beats(one, two):
+    return ((one == 'rock' and two == 'scissors') or
+            (one == 'scissors' and two == 'paper') or
+            (one == 'paper' and two == 'rock'))
+
+
 # The Player class is the parent class for all of the Players in this game
 class Player:
     def move(self):
         return 'rock'
 
     def learn(self, my_move, their_move):
-        pass
+        return my_move, their_move
+
 
 # Random Player subclass
 class RandomPlayer(Player):
@@ -43,31 +51,21 @@ class HumanPlayer(Player):
         return hp
 
 
-# Cycling Decision Player subclass **** NEEDS WORK ****
+# Remembers what move the opponent played last round and plays this round **** NEEDS WORK ****
+class ReflectPlayer(Player):
+    def move(self):
+        pass
+
+
+# Remembers what move IT played last round and cycles through the list **** NEEES WORK ****
 class CyclingPlayer(Player):
     def move(self):
         return moves
 
 
-# Smart Player subclass **** NEEDS WORK ****
-class SmartPlayer(Player):
-    def move(self):
-        if memory == " ":
-            return random.choice(moves)
-        else:
-            return memory
-
-
-def beats(one, two):
-    return ((one == 'rock' and two == 'scissors') or
-            (one == 'scissors' and two == 'paper') or
-            (one == 'paper' and two == 'rock'))
-
-
-#     Create score keeper, announce winner, report scores each round
+# Create score keeper, announce winner, report scores each round
 class Game:
-    p1_score = [0]
-    p2_score = [0]
+
 
     def __init__(self, p1, p2):
         self.p1 = p1
@@ -77,12 +75,20 @@ class Game:
         move1 = self.p1.move()
         move2 = self.p2.move()
         print_pause(f"Player 1: {move1}  Player 2: {move2}")
+        if beats(move1, move2) == True:
+            p1_score.append(+1)
+            print_pause("Player 1 wins the round!")
+        elif beats(move1, move2) == False:
+            p2_score.append(+1)
+            print_pause("Player 2 wins the round!")
+        
         self.p1.learn(move1, move2)
         self.p2.learn(move2, move1)
+        # match move 1 with move 2 using win condition beats function
 
     def play_game(self):
         print_pause("Welcome to Rock Paper Scissors!")
-        print_pause("Game Start!")
+        print_pause("Lets start the game!")
         for round in range(3):
             print_pause(f"Round {round + 1}:")
             self.play_round()
