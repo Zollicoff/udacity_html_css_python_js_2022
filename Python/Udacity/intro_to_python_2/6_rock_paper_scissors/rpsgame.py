@@ -65,7 +65,6 @@ def beats(one, two):
             (one == 'paper' and two == 'rock'))
 
 
-# Game class **** NEEDS WORK ****
 #     Create score keeper, announce winner, report scores each round
 class Game:
     p1_score = [0]
