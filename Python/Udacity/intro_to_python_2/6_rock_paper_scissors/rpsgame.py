@@ -27,9 +27,7 @@ class Player:
         return 'rock'
 
     def learn(self, my_move, their_move):
-        my_move = [" "]
-        their_move = [" "]
-
+        pass
 
 # Random Player subclass
 class RandomPlayer(Player):
