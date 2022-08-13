@@ -1,5 +1,3 @@
-# Check your code formatting (pycodestyle)
-
 import random
 
 moves = ['rock', 'paper', 'scissors']
@@ -15,6 +13,12 @@ class Player:
         pass
 
 
+# Random Player subclass *FINISHED*
+class RandomPlayer(Player):
+    def move(self):
+        return random.choice(moves)
+
+
 # Validate user input **** NEEDS WORK ****
 class HumanPlayer(Player):
     def move(self):
@@ -25,16 +29,10 @@ class HumanPlayer(Player):
             print("error")
 
 
-# Random Player subclass
-class RandomPlayer(Player):
+# Cycling Decision Player subclass **** NEEDS WORK ****
+class CyclingPlayer(Player):
     def move(self):
-        return random.choice(moves)
-
-
-# Rotating Decision Player subclass
-class RotatingPlayer(Player):
-    def move(self):
-        return moves[0+1]
+        return something
 
 
 # Smart Player subclass **** NEEDS WORK ****
@@ -52,9 +50,8 @@ def beats(one, two):
             (one == 'paper' and two == 'rock'))
 
 
-# Create a score keeper on the game
-# announce the winner
-# reports both Player's scores each round.
+# Game class **** NEEDS WORK ****
+#     Create score keeper, announce winner, report scores each round
 class Game:
     def __init__(self, p1, p2):
         self.p1 = p1
@@ -75,6 +72,7 @@ class Game:
         print("Game over!")
 
 
+# Calls the program
 if __name__ == '__main__':
-    game = Game(HumanPlayer(), RandomPlayer())
+    game = Game(RandomPlayer(), RandomPlayer())
     game.play_game()
