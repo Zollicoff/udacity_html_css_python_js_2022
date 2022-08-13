@@ -1,7 +1,23 @@
 import random
+import time
 
 moves = ['rock', 'paper', 'scissors']
+
+
 memory = []
+
+
+def print_pause(message):
+    print(message)
+    time.sleep(2)
+
+
+def valid_input(prompt, options):
+    while True:
+        option = input(prompt).lower()
+        if option in options:
+            return option
+        print_pause(f'Sorry, the option "{option}" is invalid. Try again!')
 
 
 # The Player class is the parent class for all of the Players in this game
@@ -13,26 +29,23 @@ class Player:
         pass
 
 
-# Random Player subclass *FINISHED*
+# Random Player subclass
 class RandomPlayer(Player):
     def move(self):
         return random.choice(moves)
 
 
-# Validate user input **** NEEDS WORK ****
+# Human player subclass validates user input via valid_input function
 class HumanPlayer(Player):
     def move(self):
-        hp = input()
-        if hp in moves:
-            return hp
-        else:
-            print("error")
+        hp = valid_input("Enter rock, paper, or scissors.\n",['rock', 'paper', 'scissors'])
+        return hp
 
 
 # Cycling Decision Player subclass **** NEEDS WORK ****
 class CyclingPlayer(Player):
     def move(self):
-        return something
+        return moves
 
 
 # Smart Player subclass **** NEEDS WORK ****
@@ -53,6 +66,8 @@ def beats(one, two):
 # Game class **** NEEDS WORK ****
 #     Create score keeper, announce winner, report scores each round
 class Game:
+    p1_score = [0]
+    p2_score = [0]
     def __init__(self, p1, p2):
         self.p1 = p1
         self.p2 = p2
@@ -72,7 +87,7 @@ class Game:
         print("Game over!")
 
 
-# Calls the program
+# Calls the program, choose which player to use (Player 1, Player 2)
 if __name__ == '__main__':
-    game = Game(RandomPlayer(), RandomPlayer())
+    game = Game(HumanPlayer(), RandomPlayer())
     game.play_game()
