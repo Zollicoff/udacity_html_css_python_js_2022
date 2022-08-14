@@ -111,18 +111,21 @@ class Game:
                     f"Player Two's Score: {self.score_two}")
 
     def play_game(self):
-        print_pause("Welcome to Rock Paper Scissors (Built in Python)")
+        print_pause("Welcome to Rock Paper Scissors "
+                    "(Built in VSCode w/ Python)")
         for round in range(3):
             print_pause(f"Round {round + 1}:")
             self.play_round()
-        if self.beats(self.score_one, self.score_two):
+        if self.score_one > self.score_two:
             print_pause(f"PLAYER ONE WINS THE GAME "
-                        "WITH A SCORE OF {self.score_one}!")
-        elif self.beats(self.score_two, self.score_one):
+                        f"WITH A SCORE OF {self.score_one}!")
+        elif self.score_two > self.score_one:
             print_pause(f"PLAYER TWO WINS THE GAME "
-                        "WITH A SCORE OF {self.score_two}!")
+                        f"WITH A SCORE OF {self.score_two}!")
         else:
-            print_pause(f"THE GAME ENDS IN A TIE!")
+            print_pause(f"THE GAME ENDS IN A TIE WITH PLAYER ONE'S "
+                        f"SCORE {self.score_one} and PLAYER TWO'S "
+                        f"SCORE {self.score_one}!")
         play_again()
 
 
