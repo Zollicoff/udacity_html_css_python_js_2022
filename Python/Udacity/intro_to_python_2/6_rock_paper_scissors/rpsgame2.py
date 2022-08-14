@@ -1,6 +1,10 @@
 # Necessary module imports
 import random
 import time
+ROCK = 0
+PAPER = 1
+SCISSORS = 2
+
 
 # Global variable for moves
 moves = ['rock', 'paper', 'scissors']
@@ -30,6 +34,9 @@ def beats(one, two):
 
 # The Player class is the parent class for all of the Players in this game
 class Player:
+    def __init__(self):
+        self.score = 0
+
     def move(self):
         return 'rock'
 
@@ -59,15 +66,20 @@ class ReflectPlayer(Player):
 
 # Remembers what move IT played last round and cycles through the list **** NEEES WORK ****
 class CyclingPlayer(Player):
+    memory = []
+    
     def move(self):
-        pass
+        if not self.memory:
+            return random.choice([ROCK, PAPER, SCISSORS])
+        else:
+            return (self.memory[(-1)] + 1) % 3
+
+    def learn(self, my_move, their_move):
+        self.memory.append(my_move)
 
 
 # Create score keeper, announce winner, report scores each round
 class Game:
-    p1_score = [0]
-    p2_score = [0]
-
     def __init__(self, p1, p2):
         self.p1 = p1
         self.p2 = p2
@@ -76,13 +88,14 @@ class Game:
         move1 = self.p1.move()
         move2 = self.p2.move()
         print_pause(f"Player 1: {move1}  Player 2: {move2}")
-        if beats(move1, move2) == True:
-            p1_score.append(+1)
+        if beats(move1, move2):
+            self.p1.score += 1
             print_pause("Player 1 wins the round!")
-        elif beats(move1, move2) == False:
-            p2_score.append(+1)
+        elif beats(move2, move1):
+            self.p2.score += 1
             print_pause("Player 2 wins the round!")
-        
+        else:
+            print("It's a draw.")
         self.p1.learn(move1, move2)
         self.p2.learn(move2, move1)
         # match move 1 with move 2 using win condition beats function
