@@ -1,13 +1,69 @@
 Primitive data types in JS:
-
 Numbers
 Strings
 Booleans
 Undefined
 Null
 
+Stuff:
 \\	\ (backslash)
 \"	'' (double quote)
 \'	' (single quote)
 \n	newline
 \t	tab
+
+modulo 2 detemines odd or even
+
+Operator	Meaning	Example	How it works
+&&	Logical AND	value1 && value2	Returns true if both value1 and value2 evaluate to true.
+||	Logical OR	value1 || value2	Returns true if either value1 or value2 (or even both!) evaluates to true.
+!	Logical NOT	!value1	Returns the opposite of value1. If value1 is true, then !value1 is false.
+
+&& (AND)
+A	B	A && B
+true	true	true
+true	false	false
+false	true	false
+false	false	false
+|| (OR)
+A	B	A || B
+true	true	true
+true	false	true
+false	true	true
+false	false	false
+
+
+
+
+
+"Time" Left On Sections 08-18-2022
+- Conditionals 5 Hours
+- Loops 4 Hours
+- Functions 6 Hours
+- Arrays 7 Hours
+- Objects 3 Hours
+- The Document Object Model 2 Hours
+- Creating Content with JS 2 Hours
+- Working with Browser Events 2 Hours
+- Pixel Art Maker 9 Hours
+
+
+287 + 142 = 429
+
+We also know that each weapon corresponds to a particular room, so...
+
+the poison belongs to the ballroom,
+the trophy belongs to the gallery,
+the pool stick belongs to the billiards room,
+and the knife belongs to the dining room.
+
+And we know that each suspect was located in a specific room at the time of the murder.
+
+Mr. Parkes was located in the dining room.
+Ms. Van Cleve was located in the gallery.
+Mrs. Sparr was located in the billiards room.
+Mr. Kalehoff was located in the ballroom.
+To help solve this mystery, write a combination of conditional statements that:
+
+sets the value of weapon based on the room and
+sets the value of solved to true if the value of room matches the suspect's room
