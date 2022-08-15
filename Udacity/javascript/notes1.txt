@@ -1,0 +1,13 @@
+Primitive data types in JS:
+
+Numbers
+Strings
+Booleans
+Undefined
+Null
+
+\\	\ (backslash)
+\"	'' (double quote)
+\'	' (single quote)
+\n	newline
+\t	tab
