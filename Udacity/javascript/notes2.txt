@@ -1,0 +1,52 @@
+Primitive data types in JS:
+Numbers
+Strings
+Booleans
+Undefined
+Null
+
+
+Stuff:
+\\	\ (backslash)
+\"	'' (double quote)
+\'	' (single quote)
+\n	newline
+\t	tab
+
+
+modulo 2 detemines odd or even
+
+
+Operator	Meaning	Example	How it works
+&&	Logical AND	value1 && value2	Returns true if both value1 and value2 evaluate to true.
+||	Logical OR	value1 || value2	Returns true if either value1 or value2 (or even both!) evaluates to true.
+!	Logical NOT	!value1	Returns the opposite of value1. If value1 is true, then !value1 is false.
+
+
+&& (AND)
+A	B	A && B
+true	true	true
+true	false	false
+false	true	false
+false	false	false
+|| (OR)
+A	B	A || B
+true	true	true
+true	false	true
+false	true	true
+false	false	false
+
+
+TIP: Using if(isGoing) is the same as using if(isGoing === true).
+Alternatively, using if(!isGoing) is the same as using if(isGoing === false).
+
+
+Ternary Operator:
+
+conditional ? (if condition is true) : (if condition is false)
+
+var isGoing = true;
+var color = isGoing ? "green" : "red";
+console.log(color);
+
+
