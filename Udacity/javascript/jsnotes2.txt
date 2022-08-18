@@ -83,3 +83,10 @@ x -= 6 // same as x = x - 6
 x *= 2 // same as x = x * 2
 x /= 5 // same as x = x / 5
 
+
+sort()
+shift()
+splice()
+pop()
+push() 
+join() joins elements in an array together to form a string
