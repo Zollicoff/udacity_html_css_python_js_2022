@@ -92,3 +92,6 @@ push()
 join() joins elements in an array together to form a string
 forEach()
 map() function that creates a new array
+
+The DOM is the full parse representation of the HTML markup.
+
