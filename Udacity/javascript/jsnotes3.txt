@@ -1,0 +1,6 @@
+More JavaScript Notes:
+
+.createElement()
+.createTextNode()
+.appendChild()
+.insertAdjacentHTML()
