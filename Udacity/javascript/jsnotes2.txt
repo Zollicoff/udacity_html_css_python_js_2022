@@ -94,4 +94,25 @@ forEach()
 map() function that creates a new array
 
 The DOM is the full parse representation of the HTML markup.
+ - So the DOM is a model (representation) of the relationships and attributes of the HTML document that was received.
+
+Tokens: 
+- DOCTYPE
+- start tag
+- end tag
+- comment
+- character
+- end-of-file
+
+CSS Refresher:
+# is for ID
+.class (DOT) is for class
+p is a tag
+
+DOM Accessing Elements:
+document.getElementById(' ');
+document.getElementsByClassName();
+document.getElementsByTagName();
+
+characters -> tags -> tokens -> nodes -> DOM
 
