@@ -113,6 +113,7 @@ DOM Accessing Elements:
 document.getElementById(' ');
 document.getElementsByClassName();
 document.getElementsByTagName();
+document.querySelector('.card');
 
 characters -> tags -> tokens -> nodes -> DOM
 
