@@ -117,3 +117,4 @@ document.querySelector('.card');
 
 characters -> tags -> tokens -> nodes -> DOM
 
+

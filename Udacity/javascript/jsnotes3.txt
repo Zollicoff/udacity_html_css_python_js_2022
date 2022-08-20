@@ -1,6 +1,58 @@
-More JavaScript Notes:
+// More JavaScript Notes:
 
-.createElement()
-.createTextNode()
-.appendChild()
-.insertAdjacentHTML()
+// characters -> tags -> tokens -> nodes -> DOM
+
+// DOM Accessing Elements:
+document.getElementById('');
+document.getElementsByClassName('');
+document.getElementsByTagName('');
+document.querySelector('.card');
+
+.innerHTML - Sets or returns the HTML content inside the selected element (between the tags)
+
+.innerText - NO HTML - Sets text of an element
+
+.textContent - NO HTML - Sets the text content of an element and all it's descendants
+             - Returns the text content of an element and all it's descendants
+
+.outterHTML - RARELY USED - represents the HTML element itself, as well as it's children
+
+.createElement('') to create new elements
+.appendChild('') to add a child element to a parent element as its last child
+.createTextNode('') to create a text node
+.insertAdjacentHTML('') to put HTML text anywhere around an element
+.removeChild()
+.remove()
+.firstElementChild
+.parentElement
+
+// start displaying all events on the document object
+monitorEvents(document);
+
+// turn off the displaying of all events on the document object.
+unmonitorEvents(document);
+
+<event-target>.addEventListener(<event-to-listen-for>, <function-to-run-when-an-event-happens>);
+
+const mainHeading = document.querySelector('h1');
+
+mainHeading.addEventListener('click', function () {
+  console.log('The heading was clicked!');
+});
+
+Examples:------------------------------------------------------------------------------------
+
+//
+const myPara = document.createElement('p');
+const textOfParagraph = document.createTextNode('I am the text for the paragraph!');
+
+myPara.appendChild(textOfParagraph);
+document.body.appendChild(myPara);
+
+// or (CAREFUL WITH HTML)
+const myPara = document.createElement('p');
+
+myPara.textContent = 'I am the text for the paragraph!';
+document.body.appendChild(myPara);
+
+
